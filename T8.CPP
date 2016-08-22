@@ -1,3 +1,15 @@
+//WRITER NAME : DHRUV THAKKAR.
+/*
+Automatic price tacker in excel sheet.
+this is a business software/program, in that imagine one company has 500 products and some retailer wants "50 product's MRP, wholesale rate, offers on product and etc".
+
+in general case you have to add 50 products price in excel sheet, also you have to add 50 products wholesale rate, and also other things.
+
+so i made one program in that you have to only give the file name(excel file name) and run the program you will get all product price, wholesale rate and etc.
+
+(this program is on initial stage)
+*/
+
 #include<iostream.h>
 #include<conio.h>
 #include<fstream.h>
