@@ -1,0 +1,352 @@
+#include<iostream.h>
+#include<conio.h>
+#include<fstream.h>
+#include<string.h>
+void main()
+{
+	int i,k,a,b,r,p,q,w,w1,i1,i2,i3,i4,i5,i6,i20,r1,i7,v,u[4],count,yo[4],yoyo[4],yo1[4],yo2[4],yo3[4],temp1;
+	clrscr();
+	char c;
+	char data[1000],data2[1000],data1[1000],ch[25],ch1[25],*ptr[10]={"gala hocky","gala mop1","gala mop","gala wiper","gala ndb"};
+	ifstream in;
+	ofstream out;
+	for(i=0;i<25;i++)
+	{
+		ch1[i]=ch[i];
+	}
+     //	out.open("frist.xlsx",ios::app);
+    //	out.close();
+	in.open("book1.xlsx");
+	in.seekg(0,ios::beg);
+	i=0;
+	i7=0;
+	while(!in.eof())
+	{
+		in.read((char*)&c,sizeof(c));
+		data2[i7]=c;
+		i7++;
+	}
+       int counta,b1,k1=0;
+       i2=1;
+	int temp;
+	for(k=0;k<5;k++)
+	{
+		b=0;
+		a=0;
+		counta=0;
+		for(i=0;*(ptr[k]+i)!='\0';i++)
+		{
+			counta=counta+1;
+		}
+		for(i=0;i<200;i++)
+		{
+			if(data2[i]==*(ptr[k]+a))
+			{
+				ch[b]=data2[i];
+				b=b+1;
+				a=a+1;
+				b1=b;
+			}
+			else
+			{
+				b=0;
+				a=0;
+				for(v=0;v<25;v++)
+				{
+					ch[v]='\0';
+				}
+
+			}
+		if(b1==counta)
+		{
+			r=(strcmp(ptr[k],ch));
+			if(r==0)
+			{
+				cout<<endl<<i<<"yash"<<endl<<ch<<endl;
+				if(k==0)
+				{
+					yo[k1]=i;
+					yoyo[k1]=i;
+					yo3[k1]=k;
+					k1++;
+				}
+				if(k==1)
+				{
+					yo[k1]=i;
+					yoyo[k1]=i;
+					yo3[k1]=k;
+					k1++;
+				}
+				if(k==2)
+				{
+					yo[k1]=i;
+					yoyo[k1]=i;
+					yo3[k1]=k;
+					k1++;
+				}
+				if(k==3)
+				{
+					yo[k1]=i;
+					yoyo[k1]=i;
+					yo3[k1]=k;
+					k1++;
+				}
+				if(k==4)
+				{
+					yo[k1]=i;
+					yoyo[k1]=i;
+					yo3[k1]=k;
+					k1++;
+				}
+				for(v=0;v<25;v++)
+				{
+					ch[v]='\0';
+				}
+				r=5;
+				break;
+			}
+		}
+	      }
+       }
+//****************************************************************************
+	for(i=0;i<4;i++)
+	{
+	       yoyo[i]=yo[i];
+	}
+
+	for(i1=0;i1<4;i1++)
+	{
+		for(i=0;i<3;i++)
+		{
+			if(yo[i+1]<yo[i])
+			{
+				temp=yo[i+1];
+				yo[i+1]=yo[i];
+				yo[i]=temp;
+			}
+		}
+	}
+	for(i=0;i<4;i++)
+	{
+		cout<<yoyo[i]<<" ";
+	}
+	cout<<endl;
+	for(i=0;i<4;i++)
+	{
+		cout<<yo[i]<<" ";
+	}
+	i2=0;
+	for(i1=0;i1<4;i1++)
+	{
+		for(i=0;i<4;i++)
+		{
+		       if(yoyo[i1]==yo[i])
+		       {
+			     //	 cout<<endl<<"rank of"<<i1<<"is : "<<yoyo[i1]<<" at "<<i<<"th place.";
+				 yo1[i2]=i1;
+				 yo2[i2]=i;
+				 i2++;
+				 break;
+		       }
+		}
+	}
+	cout<<endl;
+	for(i=0;i<4;i++)
+	{
+		cout<<yo1[i]<<"<=>love"<<yo2[i]<<endl;
+		yo1[i]=yo2[i2];
+	}
+	cout<<endl<<endl;
+/*       //	for(i2=0;i2<8;i2++)
+	for(i1=0;i1<4;i1++)
+	{
+		for(i=0;i<4;i++)
+		{
+			if(yo2[i+1]<yo2[i])
+			{
+				temp=yo2[i];
+				yo2[i]=yo2[i+1];
+				yo2[i+1]=temp;
+
+				temp=yo1[i];
+				yo1[i]=yo1[i+1];
+				yo1[i+1]=temp;
+			}
+		}
+	}
+	for(i=0;i<4;i++)
+	{
+		cout<<yo1[i]<<"<=>"<<yo2[i]<<endl;
+	}
+*/
+//**********************************************************************************
+
+	in.close();
+	in.open("book1.xlsx");
+	i=0;
+	in.seekg(0,ios::beg);
+	for(k=0;k<4;k++)
+	{
+		a=0;
+		b=0;
+		while(!in.eof())
+		{
+		in.read((char*)&c,sizeof(c));
+		data[i]=c;
+      //			cout<<c;
+			if(data[i]==*(ptr[yo3[yo2[k]]]+a))
+			{
+				ch[b]=data[i];
+				b=b+1;
+				a=a+1;
+				r=(strcmp(ch,ptr[yo3[yo2[k]]]));
+				if(r==0)
+				{
+					i=i+8+yo3[yo2[k]];
+					for(v=0;v<25;v++)
+					{
+						ch[v]='\0';
+					}
+					break;
+				}
+				else
+				{
+					i++;
+				}
+			}
+			else
+			{
+				b=0;
+				a=0;
+				i++;
+			}
+		 }
+	  }
+//***************************************************************************
+	in.close();
+	cout<<endl;
+	i7=0;
+	for(k=0;k<4;k++)
+	{
+		b=0;
+		a=0;
+		w=1;
+		for(i=0;i<300;i++)
+		{
+			if(data[i]=='\n')
+			{
+				w++;
+			}
+				if(data[i]==*(ptr[yo3[yo2[k]]]+a))
+				{
+					ch[b]=data[i];
+					b=b+1;
+					a=a+1;
+					r=(strcmp(ch,ptr[yo3[yo2[k]]]));
+					if(r==0)
+					{
+					 //	cout<<endl<<i<<"dhruv"<<endl<<ch<<endl;
+						w1=w;
+						if(yo3[yo2[k]]==0)
+						{
+							i1=i;
+						}
+						if(yo3[yo2[k]]==1)
+						{
+							i2=i;
+						}
+						if(yo3[yo2[k]]==2)
+						{
+							i3=i;
+						}
+						if(yo3[yo2[k]]==3)
+						{
+							i4=i;
+						}
+						if(yo3[yo2[k]]==4)
+						{
+							i5=i;
+						}
+						for(v=0;v<25;v++)
+						{
+							ch[v]='\0';
+						}
+						break;
+					}
+				}
+			else
+			{
+				b=0;
+				a=0;
+			}
+		}
+//****************************************************************************
+			if((yo3[yo2[k]]==0) && (r==0))
+			{
+				 data[i1+w1+0]='\t';
+				 data[i1+w1+1]='1';
+				 data[i1+w1+2]='2';
+				 data[i1+w1+3]='0';
+				 data[i1+w1+4]='.';
+				 data[i1+w1+5]='0';
+			}
+			if((yo3[yo2[k]]==1) && (r==0))
+			{
+				 data[i2+w1+0]='\t';
+				 data[i2+w1+1]='2';
+				 data[i2+w1+2]='0';
+				 data[i2+w1+3]='0';
+				 data[i2+w1+4]='.';
+				 data[i2+w1+5]='0';
+			 }
+			if((yo3[yo2[k]]==2) && (r==0))
+			{
+				 data[i3+w1+0]='\t';
+				 data[i3+w1+1]='5';
+				 data[i3+w1+2]='4';
+				 data[i3+w1+3]='0';
+				 data[i3+w1+4]='.';
+				 data[i3+w1+5]='0';
+			 }
+			if((yo3[yo2[k]]==3) && (r==0))
+			{
+				 data[i4+w1+0]='\t';
+				 data[i4+w1+1]='4';
+				 data[i4+w1+2]='8';
+				 data[i4+w1+3]='0';
+				 data[i4+w1+4]='.';
+				 data[i4+w1+5]='0';
+			 }
+			if((yo3[yo2[k]]==4) && (r==0))
+			{
+				 data[i5+w1+0]='\t';
+				 data[i5+w1+1]='3';
+				 data[i5+w1+2]='7';
+				 data[i5+w1+3]='6';
+				 data[i5+w1+4]='.';
+				 data[i5+w1+5]='0';
+			}
+	}
+//*****************************************************************************
+		 in.close();
+		 out.open("book1.xlsx",ios::ate);
+		 cout<<endl;
+		 out.seekp(0,ios::beg);
+		 for(i=0;i<200;i++)
+		 {
+			cout<<data[i];
+			out<<data[i];
+		 }
+		 cout<<endl;
+		 for(i=0;i<4;i++)
+		 {
+			cout<<yo2[i];
+		 }
+		 cout<<endl;
+		 for(i=0;i<4;i++)
+		 {
+			cout<<yo3[yo2[i]];
+		 }
+		 out.close();
+		 getch();
+}
