@@ -16,7 +16,7 @@ so i made one program in that you have to only give the file name(excel file nam
 #include<string.h>
 void main()
 {
-	int i,k,a,b,r,p,q,w,w1,i1,i2,i3,i4,i5,i6,i20,r1,i7,v,u[4],count,yo[4],yoyo[4],yo1[4],yo2[4],yo3[4],temp1;
+	int i,k,a,b,r,p,q,w,w1,i1,i2,i3,i4,i5,i6,i20,r1,i7,v,u[4],count,array[4],arrayZero[4],arrayFirst[4],arraySecond[4],arrayThird[4],tempOne;
 	clrscr();
 	char c;
 	char data[1000],data2[1000],data1[1000],ch[25],ch1[25],*ptr[10]={"gala hocky","gala mop1","gala mop","gala wiper","gala ndb"};
@@ -77,37 +77,37 @@ void main()
 				cout<<endl<<i<<"yash"<<endl<<ch<<endl;
 				if(k==0)
 				{
-					yo[k1]=i;
-					yoyo[k1]=i;
-					yo3[k1]=k;
+					array[k1]=i;
+					arrayZero[k1]=i;
+					arrayThird[k1]=k;
 					k1++;
 				}
 				if(k==1)
 				{
-					yo[k1]=i;
-					yoyo[k1]=i;
-					yo3[k1]=k;
+					array[k1]=i;
+					arrayZero[k1]=i;
+					arrayThird[k1]=k;
 					k1++;
 				}
 				if(k==2)
 				{
-					yo[k1]=i;
-					yoyo[k1]=i;
-					yo3[k1]=k;
+					array[k1]=i;
+					arrayZero[k1]=i;
+					arrayThird[k1]=k;
 					k1++;
 				}
 				if(k==3)
 				{
-					yo[k1]=i;
-					yoyo[k1]=i;
-					yo3[k1]=k;
+					array[k1]=i;
+					arrayZero[k1]=i;
+					arrayThird[k1]=k;
 					k1++;
 				}
 				if(k==4)
 				{
-					yo[k1]=i;
-					yoyo[k1]=i;
-					yo3[k1]=k;
+					array[k1]=i;
+					arrayZero[k1]=i;
+					arrayThird[k1]=k;
 					k1++;
 				}
 				for(v=0;v<25;v++)
@@ -123,40 +123,40 @@ void main()
 //****************************************************************************
 	for(i=0;i<4;i++)
 	{
-	       yoyo[i]=yo[i];
+	       arrayZero[i]=array[i];
 	}
 
 	for(i1=0;i1<4;i1++)
 	{
 		for(i=0;i<3;i++)
 		{
-			if(yo[i+1]<yo[i])
+			if(array[i+1]<array[i])
 			{
-				temp=yo[i+1];
-				yo[i+1]=yo[i];
-				yo[i]=temp;
+				temp=array[i+1];
+				array[i+1]=array[i];
+				array[i]=temp;
 			}
 		}
 	}
 	for(i=0;i<4;i++)
 	{
-		cout<<yoyo[i]<<" ";
+		cout<<arrayZero[i]<<" ";
 	}
 	cout<<endl;
 	for(i=0;i<4;i++)
 	{
-		cout<<yo[i]<<" ";
+		cout<<array[i]<<" ";
 	}
 	i2=0;
 	for(i1=0;i1<4;i1++)
 	{
 		for(i=0;i<4;i++)
 		{
-		       if(yoyo[i1]==yo[i])
+		       if(arrayZero[i1]==array[i])
 		       {
-			     //	 cout<<endl<<"rank of"<<i1<<"is : "<<yoyo[i1]<<" at "<<i<<"th place.";
-				 yo1[i2]=i1;
-				 yo2[i2]=i;
+			     //	 cout<<endl<<"rank of"<<i1<<"is : "<<arrayZero[i1]<<" at "<<i<<"th place.";
+				 arrayFirst[i2]=i1;
+				 arraySecond[i2]=i;
 				 i2++;
 				 break;
 		       }
@@ -165,8 +165,8 @@ void main()
 	cout<<endl;
 	for(i=0;i<4;i++)
 	{
-		cout<<yo1[i]<<"<=>love"<<yo2[i]<<endl;
-		yo1[i]=yo2[i2];
+		cout<<arrayFirst[i]<<"<=>love"<<arraySecond[i]<<endl;
+		arrayFirst[i]=arraySecond[i2];
 	}
 	cout<<endl<<endl;
 /*       //	for(i2=0;i2<8;i2++)
@@ -174,21 +174,21 @@ void main()
 	{
 		for(i=0;i<4;i++)
 		{
-			if(yo2[i+1]<yo2[i])
+			if(arraySecond[i+1]<arraySecond[i])
 			{
-				temp=yo2[i];
-				yo2[i]=yo2[i+1];
-				yo2[i+1]=temp;
+				temp=arraySecond[i];
+				arraySecond[i]=arraySecond[i+1];
+				arraySecond[i+1]=temp;
 
-				temp=yo1[i];
-				yo1[i]=yo1[i+1];
-				yo1[i+1]=temp;
+				temp=arrayFirst[i];
+				arrayFirst[i]=arrayFirst[i+1];
+				arrayFirst[i+1]=temp;
 			}
 		}
 	}
 	for(i=0;i<4;i++)
 	{
-		cout<<yo1[i]<<"<=>"<<yo2[i]<<endl;
+		cout<<arrayFirst[i]<<"<=>"<<arraySecond[i]<<endl;
 	}
 */
 //**********************************************************************************
@@ -206,15 +206,15 @@ void main()
 		in.read((char*)&c,sizeof(c));
 		data[i]=c;
       //			cout<<c;
-			if(data[i]==*(ptr[yo3[yo2[k]]]+a))
+			if(data[i]==*(ptr[arrayThird[arraySecond[k]]]+a))
 			{
 				ch[b]=data[i];
 				b=b+1;
 				a=a+1;
-				r=(strcmp(ch,ptr[yo3[yo2[k]]]));
+				r=(strcmp(ch,ptr[arrayThird[arraySecond[k]]]));
 				if(r==0)
 				{
-					i=i+8+yo3[yo2[k]];
+					i=i+8+arrayThird[arraySecond[k]];
 					for(v=0;v<25;v++)
 					{
 						ch[v]='\0';
@@ -249,33 +249,33 @@ void main()
 			{
 				w++;
 			}
-				if(data[i]==*(ptr[yo3[yo2[k]]]+a))
+				if(data[i]==*(ptr[arrayThird[arraySecond[k]]]+a))
 				{
 					ch[b]=data[i];
 					b=b+1;
 					a=a+1;
-					r=(strcmp(ch,ptr[yo3[yo2[k]]]));
+					r=(strcmp(ch,ptr[arrayThird[arraySecond[k]]]));
 					if(r==0)
 					{
 					 //	cout<<endl<<i<<"dhruv"<<endl<<ch<<endl;
 						w1=w;
-						if(yo3[yo2[k]]==0)
+						if(arrayThird[arraySecond[k]]==0)
 						{
 							i1=i;
 						}
-						if(yo3[yo2[k]]==1)
+						if(arrayThird[arraySecond[k]]==1)
 						{
 							i2=i;
 						}
-						if(yo3[yo2[k]]==2)
+						if(arrayThird[arraySecond[k]]==2)
 						{
 							i3=i;
 						}
-						if(yo3[yo2[k]]==3)
+						if(arrayThird[arraySecond[k]]==3)
 						{
 							i4=i;
 						}
-						if(yo3[yo2[k]]==4)
+						if(arrayThird[arraySecond[k]]==4)
 						{
 							i5=i;
 						}
@@ -293,7 +293,7 @@ void main()
 			}
 		}
 //****************************************************************************
-			if((yo3[yo2[k]]==0) && (r==0))
+			if((arrayThird[arraySecond[k]]==0) && (r==0))
 			{
 				 data[i1+w1+0]='\t';
 				 data[i1+w1+1]='1';
@@ -302,7 +302,7 @@ void main()
 				 data[i1+w1+4]='.';
 				 data[i1+w1+5]='0';
 			}
-			if((yo3[yo2[k]]==1) && (r==0))
+			if((arrayThird[arraySecond[k]]==1) && (r==0))
 			{
 				 data[i2+w1+0]='\t';
 				 data[i2+w1+1]='2';
@@ -311,7 +311,7 @@ void main()
 				 data[i2+w1+4]='.';
 				 data[i2+w1+5]='0';
 			 }
-			if((yo3[yo2[k]]==2) && (r==0))
+			if((arrayThird[arraySecond[k]]==2) && (r==0))
 			{
 				 data[i3+w1+0]='\t';
 				 data[i3+w1+1]='5';
@@ -320,7 +320,7 @@ void main()
 				 data[i3+w1+4]='.';
 				 data[i3+w1+5]='0';
 			 }
-			if((yo3[yo2[k]]==3) && (r==0))
+			if((arrayThird[arraySecond[k]]==3) && (r==0))
 			{
 				 data[i4+w1+0]='\t';
 				 data[i4+w1+1]='4';
@@ -329,7 +329,7 @@ void main()
 				 data[i4+w1+4]='.';
 				 data[i4+w1+5]='0';
 			 }
-			if((yo3[yo2[k]]==4) && (r==0))
+			if((arrayThird[arraySecond[k]]==4) && (r==0))
 			{
 				 data[i5+w1+0]='\t';
 				 data[i5+w1+1]='3';
@@ -339,7 +339,6 @@ void main()
 				 data[i5+w1+5]='0';
 			}
 	}
-//*****************************************************************************
 		 in.close();
 		 out.open("book1.xlsx",ios::ate);
 		 cout<<endl;
@@ -352,12 +351,12 @@ void main()
 		 cout<<endl;
 		 for(i=0;i<4;i++)
 		 {
-			cout<<yo2[i];
+			cout<<arraySecond[i];
 		 }
 		 cout<<endl;
 		 for(i=0;i<4;i++)
 		 {
-			cout<<yo3[yo2[i]];
+			cout<<arrayThird[arraySecond[i]];
 		 }
 		 out.close();
 		 getch();
